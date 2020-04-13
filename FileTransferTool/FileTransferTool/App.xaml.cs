@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using FileTransferTool.ViewModels;
+using FileTransferTool.Views;
 
 namespace FileTransferTool
 {
@@ -14,12 +14,10 @@ namespace FileTransferTool
     /// </summary>
     public partial class App : Application
     {
-        public HomeView LoginView = new HomeView();
-
-        private void Application_Startup(object sender, StartupEventArgs e)
+        private FocusDemo _startView = new FocusDemo();
+        private void App_OnStartup(object sender, StartupEventArgs e)
         {
-            LoginView.DataContext = new HomeViewModel();
-            LoginView.Show();
+            _startView.Show();
         }
     }
 }
